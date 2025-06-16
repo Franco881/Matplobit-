@@ -1,0 +1,25 @@
+# Ejercicio 04 - Celda 2
+import numpy as np
+
+# Matriz original
+matriz = np.array([
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 9, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+])
+
+print("Matriz original:")
+print(matriz)
+
+# Invertir valores
+matriz_invertida = np.where(matriz == 1, 9, np.where(matriz == 9, 1, matriz))
+
+print("\nMatriz invertida:")
+print(matriz_invertida)
+
+# Verificación
+print("\nVerificación:")
+print("1s originales → 9s:", np.sum(matriz == 1), "→", np.sum(matriz_invertida == 9))
+print("9 original → 1:", np.sum(matriz == 9), "→", np.sum(matriz_invertida == 1))
